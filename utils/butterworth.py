@@ -1,6 +1,5 @@
 from math import pi, sin, cos, sqrt
 from cmath import exp
-import matplotlib.pyplot as plt
 
 def __bwsk(k, n):
   # Returns k-th pole s_k of Butterworth transfer
