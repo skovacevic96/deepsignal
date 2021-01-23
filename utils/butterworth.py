@@ -1,14 +1,14 @@
 from math import pi, sin, cos, sqrt
 from cmath import exp
 
-def __bwsk(k, n):
+def bwsk(k, n):
   # Returns k-th pole s_k of Butterworth transfer
   # function in S-domain. Note that omega_c
   # is not taken into account here
   arg = pi * (2 * k + n - 1) / (2 * n)
   return complex(cos(arg), sin(arg))
 
-def __bwj(k, n):
+def bwj(k, n):
   # Returns (s - s_k) * H(s), where
   # H(s) - BW transfer function
   # s_k  - k-th pole of H(s)
