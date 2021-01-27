@@ -1,3 +1,7 @@
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.layers import Add
+
  class InversionLayer(keras.layers.Layer):
     def __init__(self):
         super(InversionLayer, self).__init__()
@@ -11,7 +15,7 @@ class UniformNoiseLayer(keras.layers.Layer):
         self.noise_strength = noise_strength
 
     def call(self, inputs):
-        return tf.keras.layers.Add()([tf.random.uniform(tf.shape(inputs), maxval=self.noise_strength), inputs])
+        return Add()([tf.random.uniform(tf.shape(inputs), maxval=self.noise_strength), inputs])
         
 class CuttingSamplesLayer(keras.layers.Layer):
   def __init__(self, num_samples=100, batch_size=64, input_dim=(32768, 1),  **kwargs):
